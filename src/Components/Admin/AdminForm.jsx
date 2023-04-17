@@ -40,9 +40,8 @@ const AdminForm = () => {
         height="120vh"
         flexDirection={"column"}
       >
-        <Heading m={"1rem"}>ADD PRODUCTS</Heading>
 
-        
+        <Heading m={"1rem"}>ADD PRODUCTS</Heading>
         <FormControl
           width="30%"
           boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
@@ -51,9 +50,9 @@ const AdminForm = () => {
           <FormLabel>Room Category</FormLabel>
             <Select placeholder='Select Option' id="category" value={values.category}
            onChange={(e) => handleChange(e)} >
-                <option value="family">Family</option>
-                <option value="deluxe">Deluxe</option>
-                <option value="suite">Suite</option>
+                <option value="Family">Family</option>
+                <option value="Deluxe">Deluxe</option>
+                <option value="Suite">Suite</option>
             </Select>
 
           <FormLabel>Room Images</FormLabel>
