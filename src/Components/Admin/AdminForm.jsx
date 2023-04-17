@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {FormControl,FormLabel,Input,Flex,Button,Heading, Select} from "@chakra-ui/react";
 import axios from 'axios';
 
+
 const AdminForm = () => {
     const [values,setValues]=useState({
         category:"",
@@ -28,7 +29,7 @@ const AdminForm = () => {
             type_room:values.type_room,
             type_bed:values.type_bed,
             status:values.status
-        }).then((res)=>{console.log(res.data)})
+        }).then((res)=>{console.log(res.data)}).catch((err)=>console.log(err.values))
       }
 
   return (
@@ -41,13 +42,12 @@ const AdminForm = () => {
       >
         <Heading m={"1rem"}>ADD PRODUCTS</Heading>
 
+        
         <FormControl
           width="30%"
           boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
-          p={"2rem"}
-          onSubmit={(e)=>AddProducts(e)}
-        >
-            
+          p={"2rem"} 
+        >        
           <FormLabel>Room Category</FormLabel>
             <Select placeholder='Select Option' id="category" value={values.category}
            onChange={(e) => handleChange(e)} >
@@ -111,7 +111,6 @@ const AdminForm = () => {
           >
             ADD ROOMS
           </Button>
-          
         </FormControl>
       </Flex>
       
