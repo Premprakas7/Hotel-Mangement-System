@@ -26,7 +26,6 @@ const AdminTable = () => {
                         <Th>Images</Th>
                         <Th>Delete items</Th>
                         <Th>Changes in Rooms</Th>
-
                     </Tr>
                 </Thead>
                 <Tbody>
