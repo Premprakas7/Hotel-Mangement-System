@@ -1,14 +1,24 @@
 import { Heading, Image, Table, TableContainer, Tbody, Td, Th, Thead, Tr ,Button} from '@chakra-ui/react'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link as RouteLink } from 'react-router-dom';
+import { deleteItem, getData } from '../../Redux/action';
 
 const AdminTable = () => {
-    const [data, setData]=useState([]);
-
+    const dispatch=useDispatch();
+    const hotel=useSelector(state=>state.reducer.hotel);
     useEffect(()=>{
-        axios.get("http://localhost:8080/data").then((res)=>{setData(res.data)}).catch((err)=>console.log(err))
-    },[])
-    console.log(data)
+        if(hotel.length===0){
+            dispatch(getData())
+        }
+    },[dispatch,hotel.length])
+
+    const handleDelete=(id)=>{
+        let newData=hotel.filter((item)=>item.id !==id);
+        dispatch(deleteItem(id,newData)).then(()=>dispatch(getData()))
+
+    }
+    console.log(hotel)
   return (
     <div>
         <Heading>Admin Table</Heading>
@@ -29,7 +39,7 @@ const AdminTable = () => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {data.map((e)=>
+                    {hotel.map((e)=>
                         <Tr key={e.id}>
                             <Td>{e.id}</Td>
                             <Td>{e.category}</Td>
@@ -39,12 +49,9 @@ const AdminTable = () => {
                             <Td>{e.type_bed}</Td>
                             <Td>{e.status}</Td>
                             <Td><Image boxSize="12rem" h="10rem" src={e.image}/></Td>
-                            <Td><Button>Delete</Button></Td>
-                            <Td><Button>Update</Button></Td>
-
-
+                            <Td><Button onClick={()=>handleDelete(e.id)}>Delete</Button></Td>
+                            <Td><RouteLink to={`/admin/edit/${e.id}`}><Button>Update</Button></RouteLink></Td>
                         </Tr>
-
                     )}
                 </Tbody>
             </Table>
