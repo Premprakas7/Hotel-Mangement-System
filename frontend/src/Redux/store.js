@@ -3,8 +3,5 @@ import { reducer } from "./reducer";
 import thunk from "redux-thunk";
 
 
-
-
-
 export const rootReducer=combineReducers({reducer})
 export const store=legacy_createStore(rootReducer, applyMiddleware(thunk))
