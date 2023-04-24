@@ -1,16 +1,26 @@
 
+ const path = require("path")
+ const multer = require("multer");
+ const req = require("express/lib/request")
 
-const multer = require("multer");
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, '/tmp/my-uploads')
+  const storage = multer.diskStorage({
+    destination: function (req, file, cb){
+      cb(null, path.join(__dirname,"../uploads"))
     },
     filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      const uniqueSuffix = Date.now()
       cb(null, file.fieldname + '-' + uniqueSuffix)
     }
   })
+
+
+  const fileFilter = (req, file, callback) => {
+    if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+      callback(null, true);
+    } else {
+      callback(new Error("Incorrect mime type"), false);
+    }
+  };
   
 
 const options = {
