@@ -27,7 +27,7 @@
       "capacity": "3",
       "type_room": "Non AC",
       "type_bed": "Double",
-      "status": "Booked",
+      "status": "booked",
       "id": 4
     }
   ]

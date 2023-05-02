@@ -7,14 +7,11 @@ import { Button } from '@chakra-ui/react'
 const Admin = () => {
   return (
     <div>
-
       <RouteLink to="/"><Button>Home</Button></RouteLink>
          <AdminTable/>
         <br />
         <AdminForm/>
-
     </div>
   )
 }
-
 export default Admin
