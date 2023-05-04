@@ -58,7 +58,6 @@ const AdminEdit = () => {
           <Text fontSize="xl" fontWeight="600">Status</Text>
           <Input type="text" placeholder='Status' value={status} onChange={(e)=>setStatus(e.target.value)} />
           <Button onClick={()=>UpadteHandler()}>Update</Button>
-
         </Box>
       
     </div>
