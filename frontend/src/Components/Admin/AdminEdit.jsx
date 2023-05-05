@@ -1,8 +1,9 @@
-import { Box, Button, Heading, Input ,Text} from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Input ,Spacer,Text} from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { EditData, getData } from '../../Redux/action'
+import { Link as RouteLink } from 'react-router-dom'
 
 const AdminEdit = () => {
   const {id}=useParams()
@@ -45,7 +46,8 @@ const AdminEdit = () => {
   return (
     <div>
         <Heading>Edit Page</Heading>
-        <Box  w="25rem" ml="35%"> 
+        <Box  w="25rem" ml="35%" p="2rem"
+        boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}> 
           <Text  fontSize="xl"  fontWeight="600"> Category</Text>
           <Input type="text" placeholder='Category' value={category} onChange={(e)=>setCategory(e.target.value)} />
 
@@ -57,9 +59,15 @@ const AdminEdit = () => {
 
           <Text fontSize="xl" fontWeight="600">Status</Text>
           <Input type="text" placeholder='Status' value={status} onChange={(e)=>setStatus(e.target.value)} />
+          <Flex >
           <Button onClick={()=>UpadteHandler()}>Update</Button>
-        </Box>
-      
+          <Spacer/>
+          <RouteLink to="/admin"><Button>Cancel</Button></RouteLink>
+          </Flex>
+          
+        </Box>   
+        
+   
     </div>
   )
 }

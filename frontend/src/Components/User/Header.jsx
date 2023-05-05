@@ -1,13 +1,11 @@
-import { Box, Button, Flex, Spacer } from '@chakra-ui/react'
+import { Box, Button, Flex, Spacer,Heading } from '@chakra-ui/react'
 import React from 'react'
 
 const Header = () => {
   return (
     <div>
-        <Flex>
-            <Box>Pp Hotel</Box>
-            <Box>Types of Hotels</Box>
-            <Box></Box>
+        <Flex bg="teal">
+            <Heading fontStyle="italic" color="maroon">Maleen Hotel</Heading>
             <Spacer/>
             <Button>SignUp</Button>
             <Button>Login</Button>
