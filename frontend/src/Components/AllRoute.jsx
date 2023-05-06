@@ -4,6 +4,8 @@ import Home from '../Pages/Home'
 import User from '../Pages/User'
 import Admin from '../Pages/Admin'
 import AdminEdit from './Admin/AdminEdit'
+import SignUp from './SignUp/SignUp'
+import Login from './Login/Login'
 
 const AllRoute = () => {
   return (
@@ -13,7 +15,8 @@ const AllRoute = () => {
             <Route path='/user' element={<User/>}/>
             <Route path='/admin' element={<Admin/>}/>
             <Route path='/admin/edit/:id' element={<AdminEdit/>}/>
-
+            <Route path='/signup' element={<SignUp/>}/>
+            <Route path='/login' element={<Login/>}/>
         </Routes>
 
       
