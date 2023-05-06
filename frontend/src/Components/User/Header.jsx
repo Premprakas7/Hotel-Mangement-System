@@ -9,7 +9,7 @@ const Header = () => {
             <Heading fontStyle="italic" color="white">Maleen Hotel</Heading>
             <Spacer/>
             <RouteLink to="/signup"><Button>SignUp</Button></RouteLink>
-            <RouteLink to="/signup"><Button ml=".5rem">SignUp</Button></RouteLink>
+            <RouteLink to="/login"><Button ml=".5rem">Login</Button></RouteLink>
         </Flex>
     </div>
   )
