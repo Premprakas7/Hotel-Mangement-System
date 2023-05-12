@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {FormControl,FormLabel,Input,Flex,Button,Heading,Stack, Text} from "@chakra-ui/react";
 import axios from 'axios';
 import { Link as RouteLink } from 'react-router-dom'
+import Header from '../User/Header';
 
 
 
@@ -28,6 +29,7 @@ const SignUp = () => {
 
   return (
     <div>
+      <Header/>
          <Flex
         alignItems="center"
         justifyContent="center"
@@ -70,7 +72,7 @@ const SignUp = () => {
             mt="15px"
             width="full"
             type="submit"
-            colorScheme="blue"
+            colorScheme="teal"
              onClick={(e)=>AddProducts(e)}
           >
             Sign Up
@@ -79,7 +81,7 @@ const SignUp = () => {
                 <Text align={"center"}>
                   Already a user?{" "}
                   <RouteLink to="/login" color={"blue.400"}>
-                   <Button colorScheme="blue">Login</Button> 
+                   <Button colorScheme="teal">Login</Button> 
                   </RouteLink>
                 </Text>
               </Stack>
