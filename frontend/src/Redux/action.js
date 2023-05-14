@@ -12,12 +12,9 @@ axios.get("http://localhost:8080/data", params)
 
 export const deleteItem = (id, payload) => (dispatch) => {
     dispatch({ type: DELETE_REQUEST});
-    return axios
-      .delete(`http://localhost:8080/data/${id}`, payload)
+    return axios.delete(`http://localhost:8080/data/${id}`, payload)
       .then((r) => dispatch({ type: DELETE_SUCCESS, payload: r }))
-      .catch((e) =>
-        dispatch((e) =>
-          dispatch({ type: DELETE_FAILURE, payload: e })
+      .catch((e) => dispatch((e) => dispatch({ type: DELETE_FAILURE, payload: e })
         )
       );
   };
