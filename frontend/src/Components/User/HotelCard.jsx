@@ -2,7 +2,7 @@ import React from 'react'
 import {Box,Center,useColorModeValue,Heading, Text,Stack,Image} from '@chakra-ui/react';
 import { Link as RouteLink } from 'react-router-dom';
 
-const HotelCard = ({item,category,image,cost,capacity,type_room, type_bed, status,id }) => {
+const HotelCard = ({item,category,name,image,cost,capacity,type_room, type_bed, status,id }) => {
   return (
     <div>
          <Center py={12}>
@@ -48,7 +48,7 @@ const HotelCard = ({item,category,image,cost,capacity,type_room, type_bed, statu
         </Box>
         <Stack pt={10} align={'center'}>
           <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-            {category}
+            {name}
           </Text>
           <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
           ₹{cost}

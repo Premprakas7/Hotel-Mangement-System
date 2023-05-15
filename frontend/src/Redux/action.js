@@ -1,5 +1,6 @@
 import axios from "axios"
-import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS, DELETE_REQUEST,DELETE_SUCCESS,DELETE_FAILURE, EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from "./actionTypes"
+import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS, DELETE_REQUEST,DELETE_SUCCESS,DELETE_FAILURE,
+   EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from "./actionTypes"
 
 
 
@@ -9,6 +10,7 @@ axios.get("http://localhost:8080/data", params)
 .then((res)=>dispatch({type:DATA_SUCCESS, payload:res.data}))
 .catch((err)=>dispatch({type:DATA_FAILURE}))
 }
+
 
 export const deleteItem = (id, payload) => (dispatch) => {
     dispatch({ type: DELETE_REQUEST});

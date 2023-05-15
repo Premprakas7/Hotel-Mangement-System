@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const AdminForm = () => {
     const [values,setValues]=useState({
+        name:"",
         category:"",
         image:"",
         cost:"",
@@ -22,6 +23,7 @@ const AdminForm = () => {
       const AddProducts=(e)=>{
         e.preventDefault();
         axios.post("http://localhost:8080/data",{
+            name:values.name,
             category:values.category,
             image:values.image,
             cost:values.cost,
@@ -46,7 +48,15 @@ const AdminForm = () => {
           width="30%"
           boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
           p={"2rem"} 
-        >        
+        >      
+         <FormLabel>Hotel Name</FormLabel>
+          <Input
+            type="text"
+            placeholder="name"
+            id="name"
+            value={values.name}
+           onChange={(e) => handleChange(e)}
+           />  
           <FormLabel>Room Category</FormLabel>
             <Select placeholder='Select Option' id="category" value={values.category}
            onChange={(e) => handleChange(e)} >

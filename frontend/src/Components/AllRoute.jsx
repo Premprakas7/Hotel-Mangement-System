@@ -6,6 +6,7 @@ import Admin from '../Pages/Admin'
 import AdminEdit from './Admin/AdminEdit'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
+import Details from './User/Details'
 
 const AllRoute = () => {
   return (
@@ -17,7 +18,7 @@ const AllRoute = () => {
             <Route path='/admin/edit/:id' element={<AdminEdit/>}/>
             <Route path='/signup' element={<SignUp/>}/>
             <Route path='/login' element={<Login/>}/>
-            <Route path='/user/hotel/id' element={<Login/>}/>
+            <Route path='/user/hotel/:id' element={<Details/>}/>
         </Routes>
 
       
