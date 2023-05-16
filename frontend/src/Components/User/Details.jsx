@@ -25,16 +25,19 @@ const Details = () => {
     const dispatch=useDispatch();
     const detail=useSelector(state=>state.reducer.hotel);
     const [current, setCurrent]=useState({});
+
     useEffect(()=>{
+      if(detail.length===0){
         dispatch(getData())
-    },[dispatch])
+      } 
+    },[detail.length,dispatch])
     
     useEffect(()=>{
-      if(id){
-        const current=detail.find((hotel)=>hotel.id===id)
-        current && setCurrent(current)
+       if(id){
+          const current = detail.find((item)=>item.id===id);
+          current && setCurrent(current)
       }
-    },[id,detail,current])
+    },[id,detail])
 
 
     console.log(current)
