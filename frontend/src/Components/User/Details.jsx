@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import { getData } from '../../Redux/action';
+import Header from './Header';
 
 const Details = () => {
     const {id}=useParams();
@@ -42,7 +43,7 @@ const Details = () => {
 
   return (
     <div>
-      
+      <Header/>
        <Container maxW={'7xl'} >
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
