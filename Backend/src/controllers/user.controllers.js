@@ -17,9 +17,13 @@ router.post("", uploads.single("profile"),async(req,res)=>{
     try {
         const users=await User.create({
             name:req.body.name,
-            email:req.body.email,
-            password:req.body.password,
-            profile:req.file.path
+            category:req.body.category,
+            cost:req.body.cost,
+            image:req.file.image,
+            capacity:req.body.capacity,
+            type_room:req.body.type_room,
+            type_bed:req.body.type_bed,
+            status:req.body.status
         }).lean().exec();
         return res.status(200).send(users);
     } catch (err) {
@@ -35,9 +39,13 @@ router.post("/multiple", uploads.any("profile"), async (req, res) => {
       });
       const users=await User.create({
         name:req.body.name,
-        email:req.body.email,
-        password:req.body.password,
-        profile:filePaths
+        category:req.body.category,
+        cost:req.body.cost,
+        image:req.file.image,
+        capacity:req.body.capacity,
+        type_room:req.body.type_room,
+        type_bed:req.body.type_bed,
+        status:req.body.status
     }).lean().exec();
 
       return res.status(200).send(users);
