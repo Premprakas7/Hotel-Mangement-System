@@ -5,7 +5,7 @@ import { Link as RouteLink } from 'react-router-dom'
 const Header = () => {
   return (
     <div>
-        <Flex bg="teal" h="4rem" alignItems="center" >
+        <Flex bg="teal" h="4rem" alignItems="center" maxW={'full'} >
             <RouteLink to="/user"><Heading fontStyle="italic" color="white">Maleen Hotel</Heading></RouteLink>
             <Spacer/>
             <RouteLink to="/signup"><Button >SignUp</Button></RouteLink>

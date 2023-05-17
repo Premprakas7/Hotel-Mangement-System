@@ -7,7 +7,6 @@ import {
   Text,
   Image,
   Flex,
-  VStack,
   Button,
   Heading,
   SimpleGrid,
@@ -23,8 +22,9 @@ import { getData } from '../../Redux/action';
 const Details = () => {
     const {id}=useParams();
     const dispatch=useDispatch();
-    const detail=useSelector(state=>state.reducer.hotel);
     const [current, setCurrent]=useState({});
+    const detail=useSelector(state=>state.reducer.hotel);
+    
 
     useEffect(()=>{
       if(detail.length===0){
@@ -34,13 +34,12 @@ const Details = () => {
     
     useEffect(()=>{
        if(id){
-          const current = detail.find((item)=>item.id===id);
+        const current = detail.find((hotel)=>hotel.id===Number(id));
           current && setCurrent(current)
       }
     },[id,detail])
+    console.log(current);
 
-
-    console.log(current)
   return (
     <div>
       
@@ -66,13 +65,13 @@ const Details = () => {
               lineHeight={1.1}
               fontWeight={600}
               fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-              Automatic Watch
+              {current.name}
             </Heading>
             <Text
               color={useColorModeValue('gray.900', 'gray.400')}
               fontWeight={300}
               fontSize={'2xl'}>
-              $350.00 USD
+              ₹{current.cost}
             </Text>
           </Box>
 
@@ -84,44 +83,7 @@ const Details = () => {
                 borderColor={useColorModeValue('gray.200', 'gray.600')}
               />
             }>
-            <VStack spacing={{ base: 4, sm: 6 }}>
-              <Text
-                color={useColorModeValue('gray.500', 'gray.400')}
-                fontSize={'2xl'}
-                fontWeight={'300'}>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore
-              </Text>
-              <Text fontSize={'lg'}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                maxime modi nam officiis porro, quae, quisquam quos
-                reprehenderit velit? Natus, totam.
-              </Text>
-            </VStack>
-            <Box>
-              <Text
-                fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
-                fontWeight={'500'}
-                textTransform={'uppercase'}
-                mb={'4'}>
-                Features
-              </Text>
-
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                <List spacing={2}>
-                  <ListItem>Chronograph</ListItem>
-                  <ListItem>Master Chronometer Certified</ListItem>{' '}
-                  <ListItem>Tachymeter</ListItem>
-                </List>
-                <List spacing={2}>
-                  <ListItem>Anti‑magnetic</ListItem>
-                  <ListItem>Chronometer</ListItem>
-                  <ListItem>Small seconds</ListItem>
-                </List>
-              </SimpleGrid>
-            </Box>
+           
             <Box>
               <Text
                 fontSize={{ base: '16px', lg: '18px' }}
@@ -135,46 +97,33 @@ const Details = () => {
               <List spacing={2}>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Between lugs:
+                  Category:
                   </Text>{' '}
-                  20 mm
+                  {current.category}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Bracelet:
+                  Type of Room:
                   </Text>{' '}
-                  leather strap
+                  {current.type_room}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Case:
+                  Type of Bed:
                   </Text>{' '}
-                  Steel
+                  {current.type_bed}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Case diameter:
+                    Max Person:
                   </Text>{' '}
-                  42 mm
+                  {current.capacity}
                 </ListItem>
                 <ListItem>
                   <Text as={'span'} fontWeight={'bold'}>
-                    Dial color:
+                    Status:
                   </Text>{' '}
-                  Black
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Crystal:
-                  </Text>{' '}
-                  Domed, scratch‑resistant sapphire crystal with anti‑reflective
-                  treatment inside
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Water resistance:
-                  </Text>{' '}
-                  5 bar (50 metres / 167 feet){' '}
+                  {current.status}
                 </ListItem>
               </List>
             </Box>
@@ -195,11 +144,6 @@ const Details = () => {
             }}>
             Add to cart
           </Button>
-
-          <Stack direction="row" alignItems="center" justifyContent={'center'}>
-            
-            <Text>2-3 business days delivery</Text>
-          </Stack>
         </Stack>
       </SimpleGrid>
     </Container>
