@@ -1,4 +1,5 @@
-import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS } from "./actionTypes";
+import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS,SORT_DATA } from "./actionTypes";
+
 
 
 const initState={
@@ -14,6 +15,7 @@ const reducer=(state=initState,{type, payload})=>{
         case DATA_REQUEST:return{...state, isLoading:true, isError:false}
         case DATA_SUCCESS:return{...state, hotel:payload,isLoading:false, isError:false}
         case DATA_FAILURE:return{...state, isLoading:false, isError:true}
+        case SORT_DATA:return { ...state, data:payload };
         default:{return state}
     }
 }

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS, DELETE_REQUEST,DELETE_SUCCESS,DELETE_FAILURE,
-   EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from "./actionTypes"
+   EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE ,SORT_DATA} from "./actionTypes"
 
 
 
@@ -26,4 +26,11 @@ export const deleteItem = (id, payload) => (dispatch) => {
     return axios.patch(`http://localhost:8080/data/${id}`, payload)
       .then((r) => { dispatch({ type:EDIT_SUCCESS, payload: r.data });})
       .catch((e) => dispatch({ type: EDIT_FAILURE, payload: e }));
+  };
+
+  export const sortData = (data) => {
+    return {
+      type: SORT_DATA,
+      payload: data,
+    };
   };
