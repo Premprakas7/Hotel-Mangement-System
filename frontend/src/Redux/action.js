@@ -28,9 +28,9 @@ export const deleteItem = (id, payload) => (dispatch) => {
       .catch((e) => dispatch({ type: EDIT_FAILURE, payload: e }));
   };
 
-  export const sortData = (data) => {
+  export const sortData = (hotel) => {
     return {
       type: SORT_DATA,
-      payload: data,
+      payload: hotel,
     };
   };
