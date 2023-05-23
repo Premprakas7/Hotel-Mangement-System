@@ -26,16 +26,19 @@ const Hotel = () => {
       }
       dispatch(sortData(sortBy))
       console.log(sortData);
+    }
 
+    const filterName=(e)=>{
+      let value=e.target.value;
     }
   return (
     <div>
-      <Flex>
+      <Flex gap="1rem">
       <Select onClick={handleSort} placeholder='Cost Sort'>
         <option value="asc">High to Low</option>
         <option value="desc">Low to High</option>
       </Select>
-      <Input placeholder='Filter by Hotel Name'/>
+      <Input placeholder='Filter by Hotel Name' onInput={filterName}/>
       </Flex>
 
 
