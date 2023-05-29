@@ -20,7 +20,7 @@ const SignUp = () => {
 
       const AddProducts=(e)=>{
         e.preventDefault();
-        axios.post("",{
+        axios.post("https://hotel-room-56571-default-rtdb.firebaseio.com/hotel",{
             name:values.name,
             email:values.email,
             password:values.password,

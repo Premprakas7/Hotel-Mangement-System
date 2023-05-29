@@ -7,14 +7,12 @@ import { Grid, Input, Select,Flex } from '@chakra-ui/react';
 const Hotel = () => {
     const dispatch=useDispatch();
     const hotel=useSelector(state=>state.reducer.hotel);
-
     useEffect(()=>{
         if(hotel.length===0){
           dispatch(getData())
         }
     },[dispatch,hotel.length])
-    console.log(hotel);
-
+  
     const handleSort=(e)=>{
       let value=e.target.value;
       let sortBy=[...hotel];
@@ -25,7 +23,6 @@ const Hotel = () => {
         sortBy.sort((a,b)=>{return a.cost-b.cost})
       }
       dispatch(sortData(sortBy))
-      console.log(sortData);
     }
 
     const filterName=(e)=>{
