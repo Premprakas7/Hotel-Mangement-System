@@ -1,31 +1,53 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import {FormControl,FormLabel,Input,Flex,Button,Heading,Stack, Text} from "@chakra-ui/react";
-import axios from 'axios';
-import { Link as RouteLink } from 'react-router-dom'
+
+import { Link as RouteLink , useNavigate } from 'react-router-dom'
 import Header from '../User/Header';
+import { useDispatch } from 'react-redux';
+import { register } from '../../Redux/auth/action';
+import { REGISTER_SUCCESS } from '../../Redux/auth/actionTypes';
+
+function reducer(state,action){
+  switch(action.type){
+    case "name":
+      return{
+        ...state,
+        name:action.payload
+      }
+      case "email":
+        return{
+          ...state,
+          email:action.payload
+        }
+        case "password":
+          return{
+            ...state,
+            password:action.payload
+          }
+      default: return state;
+  }
+}
+
+const initialState={
+  name:'',
+  email:'',
+  password:'',
+}
 
 
 
 const SignUp = () => {
-    const [values,setValues]=useState({
-        name:"",
-        email:"",
-        password:""
-    });
-    const handleChange = (e) => {
-        const newData = { ...values };
-        newData[e.target.id] = e.target.value;
-        setValues(newData)
-      };
+    const [state, setter]=useReducer(reducer, initialState);
+    const navigate=useNavigate();
+    const dispatch= useDispatch();
 
-      const AddProducts=(e)=>{
-        e.preventDefault();
-        axios.post("https://reqres.in//api/register",{
-            name:values.name,
-            email:values.email,
-            password:values.password,
-        }).then((res)=>{console.log(res.data)}).catch((err)=>console.log(err.values))
-      }
+    const signUpHandler=()=>{
+dispatch(register(state)).then((res)=>{
+  if(res===REGISTER_SUCCESS){
+    navigate("/login",{replace:true})
+  }
+})
+    }
 
   return (
     <div>
@@ -35,6 +57,7 @@ const SignUp = () => {
         justifyContent="center"
         height="70vh"
         flexDirection={"column"}
+       
       >
         <Heading m={"1rem"}>SIGNUP</Heading>
         <FormControl
@@ -47,33 +70,32 @@ const SignUp = () => {
             type="text"
             placeholder="Enter Name"
             id="name"
-            value={values.name}
-           onChange={(e) => handleChange(e)}
-          />
+            value={state.name} onChange={(e)=>setter({type:'name', payload:e.target.value})}
+                    />
 
           <FormLabel>Email</FormLabel>
           <Input
             type="text"
             placeholder="email"
             id="email"
-            value={values.email}
-           onChange={(e) => handleChange(e)}
-          />
+            value={state.email} onChange={(e)=>setter({type:'email', payload:e.target.value})}
+          
+        />
 
         <FormLabel>Password</FormLabel>
           <Input
             type="text"
             placeholder="password"
             id="password"
-            value={values.password}
-           onChange={(e) => handleChange(e)}
-          />    
+            value={state.password} onChange={(e)=>setter({type:'password', payload:e.target.value})}
+    />    
           <Button
             mt="15px"
             width="full"
             type="submit"
             colorScheme="teal"
-             onClick={(e)=>AddProducts(e)}
+            onClick={signUpHandler}
+            
           >
             Sign Up
           </Button>
