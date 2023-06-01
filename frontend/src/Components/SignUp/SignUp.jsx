@@ -33,8 +33,6 @@ const initialState={
   password:'',
 }
 
-
-
 const SignUp = () => {
     const [state, setter]=useReducer(reducer, initialState);
     const navigate=useNavigate();
