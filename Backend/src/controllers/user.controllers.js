@@ -3,7 +3,6 @@ const User=require("../models/user.models");
 const uploads = require("../middleware/uploads");
 const router=express.Router()
 
-
 router.get("", async(req,res)=>{
     try {
         const users=await User.find().lean().exec();
@@ -13,7 +12,7 @@ router.get("", async(req,res)=>{
     }
 })
 
-router.post("", uploads.single("profile"),async(req,res)=>{
+router.post("", uploads.single("image"),async(req,res)=>{
     try {
         const users=await User.create({
             name:req.body.name,
@@ -32,7 +31,7 @@ router.post("", uploads.single("profile"),async(req,res)=>{
 })
 
 
-router.post("/multiple", uploads.any("profile"), async (req, res) => {
+router.post("/multiple", uploads.any("image"), async (req, res) => {
     try {
       const filePaths = req.files.map((file) => {
         return file.path;
