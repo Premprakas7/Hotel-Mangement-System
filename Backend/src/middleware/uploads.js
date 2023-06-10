@@ -1,4 +1,3 @@
-
  const path = require("path")
  const multer = require("multer");
  const req = require("express/lib/request")
@@ -26,7 +25,7 @@ const options = {
     storage,
     fileFilter,
     limits:{
-        fileSize:1024*1024*5
+        fileSize:1024*1024*10
     }
 };
 
