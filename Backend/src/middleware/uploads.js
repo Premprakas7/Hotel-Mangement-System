@@ -7,13 +7,13 @@
       cb(null, path.join(__dirname,"../uploads"))
     },
     filename: function (req, file, cb) {
-      const uniquePrefix = Date.now()
-      cb(null, uniquePrefix + "-" + file.originalname)
+      const uniquePrefix = Date.now();
+      cb(null, uniquePrefix + "-" + file.originalname);
     }
   })
 
   const fileFilter = (req, file, callback) => {
-    if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+    if (file.mimetype === "hotelPic/jpeg" || file.mimetype === "hotelPic/png" || file.mimetype === "hotelPic/jpg" ) {
       callback(null, true);
     } else {
       callback(new Error("Incorrect mime type"), false);

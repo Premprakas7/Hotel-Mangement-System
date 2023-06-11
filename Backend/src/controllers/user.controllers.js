@@ -12,17 +12,17 @@ router.get("", async(req,res)=>{
     }
 })
 
-router.post("", uploads.single("image"),async(req,res)=>{
+router.post("", uploads.single("hotelPic"),async(req,res)=>{
     try {
         const users=await User.create({
             name:req.body.name,
             category:req.body.category,
             cost:req.body.cost,
-            image:req.file.image,
             capacity:req.body.capacity,
             type_room:req.body.type_room,
             type_bed:req.body.type_bed,
-            status:req.body.status
+            status:req.body.status,
+            hotelPic:req.file.path
         }).lean().exec();
         return res.status(200).send(users);
     } catch (err) {
@@ -31,7 +31,7 @@ router.post("", uploads.single("image"),async(req,res)=>{
 })
 
 
-router.post("/multiple", uploads.any("image"), async (req, res) => {
+router.post("/multiple", uploads.any("hotelPic"), async (req, res) => {
     try {
       const filePaths = req.files.map((file) => {
         return file.path;
@@ -40,7 +40,7 @@ router.post("/multiple", uploads.any("image"), async (req, res) => {
         name:req.body.name,
         category:req.body.category,
         cost:req.body.cost,
-        image:req.file.image,
+        hotelPic:req.file.hotelPic,
         capacity:req.body.capacity,
         type_room:req.body.type_room,
         type_bed:req.body.type_bed,
