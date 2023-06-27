@@ -22,7 +22,7 @@ const AdminForm = () => {
 
       const AddProducts=(e)=>{
         e.preventDefault();
-        axios.post("https://hotel-kp84.onrender.com/users",{
+        axios.post("https://hotel-m.onrender.com/data",{
             name:values.name,
             category:values.category,
             image:values.image,
@@ -31,7 +31,7 @@ const AdminForm = () => {
             type_room:values.type_room,
             type_bed:values.type_bed,
             status:values.status
-        }).then((res)=>{console.log(res.data)}).catch((err)=>console.log(err.values))
+        }).then((res)=>console.log(res.data)).catch((err)=>console.log(err.values))
       }
 
   return (
