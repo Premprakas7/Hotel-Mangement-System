@@ -1,4 +1,4 @@
-import {  LOGIN_REQUEST, LOGIN_SUCCESS, LOGUN_FAILURE, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./actionTypes";
+import {  LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./actionTypes";
 
 const initialState = {
     token: '',
@@ -14,7 +14,7 @@ const initialState = {
       case REGISTER_FAILURE :return{...state,isLoading:false,isError:true}
       case LOGIN_REQUEST:return{...state,isLoading:true,isAuth:false,isError:false}
       case LOGIN_SUCCESS :return{...state,isLoading:false,isError:false,isAuth:true,token:payload}
-      case LOGUN_FAILURE :return{...state,isLoading:false,isAuth:false,isError:true,token:""}
+      case LOGIN_FAILURE :return{...state,isLoading:false,isAuth:false,isError:true,token:""}
       default:{return state;} 
   }
   };

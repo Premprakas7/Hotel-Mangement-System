@@ -24,7 +24,7 @@ export const login = (params) => (dispatch) => {
       return Types.LOGIN_SUCCESS;
     })
     .catch((e) => {
-      dispatch({ type: Types.LOGUN_FAILURE, payload: e });
-      return Types.LOGUN_FAILURE;
+      dispatch({ type: Types.LOGIN_FAILURE, payload: e });
+      return Types.LOGIN_FAILURE;
     });
 };
