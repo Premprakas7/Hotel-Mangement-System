@@ -2,7 +2,7 @@ import { Box, Button, Flex, Heading, Input ,Spacer,Text} from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { EditData, getData } from '../../Redux/action'
+import { EditData, getData } from '../../Redux/app/action'
 import { Link as RouteLink } from 'react-router-dom'
 
 const AdminEdit = () => {

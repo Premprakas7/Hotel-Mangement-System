@@ -2,7 +2,7 @@ import { Heading, Image, Table, TableContainer, Tbody, Td, Th, Thead, Tr ,Button
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouteLink } from 'react-router-dom';
-import { deleteItem, getData } from '../../Redux/action';
+import { deleteItem, getData } from '../../Redux/app/action';
 
 const AdminTable = () => {
     const dispatch=useDispatch();

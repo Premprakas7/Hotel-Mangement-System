@@ -16,7 +16,7 @@ import {
   ListItem,
 } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
-import { getData } from '../../Redux/action';
+import { getData } from '../../Redux/app/action';
 import Header from './Header';
 
 const Details = () => {

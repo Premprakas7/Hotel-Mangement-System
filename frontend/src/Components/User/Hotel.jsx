@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getData, sortData } from '../../Redux/action';
+import { getData, sortData } from '../../Redux/app/action';
 import HotelCard from './HotelCard';
 import { Grid, Input, Select,Flex } from '@chakra-ui/react';
 
