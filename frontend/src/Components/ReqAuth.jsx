@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 const ReqAuth = ({children}) => {
     const location=useLocation();
-    const auth=useSelector(state=>state.AuthReducer.isAuth);
+    const auth=useSelector(state=>state.Auth.isAuth);
     if(!auth){
         return <Navigate to='/login' state={{from:location }} replace />
     }
