@@ -40,7 +40,7 @@ router.post("/multiple", uploads.any("hotelPic"), async (req, res) => {
         name:req.body.name,
         category:req.body.category,
         cost:req.body.cost,
-        hotelPic:req.file.hotelPic,
+        hotelPic:req.file.path,
         capacity:req.body.capacity,
         type_room:req.body.type_room,
         type_bed:req.body.type_bed,
