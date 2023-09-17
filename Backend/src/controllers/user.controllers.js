@@ -31,27 +31,27 @@ router.post("", uploads.single("hotelPic"),async(req,res)=>{
 })
 
 
-router.post("/multiple", uploads.any("hotelPic"), async (req, res) => {
-    try {
-      const filePaths = req.files.map((file) => {
-        return file.path;
-      });
-      const users=await User.create({
-        name:req.body.name,
-        category:req.body.category,
-        cost:req.body.cost,
-        hotelPic:req.file.path,
-        capacity:req.body.capacity,
-        type_room:req.body.type_room,
-        type_bed:req.body.type_bed,
-        status:req.body.status
-    }).lean().exec();
+// router.post("/multiple", uploads.any("hotelPic"), async (req, res) => {
+//     try {
+//       const filePaths = req.files.map((file) => {
+//         return file.path;
+//       });
+//       const users=await User.create({
+//         name:req.body.name,
+//         category:req.body.category,
+//         cost:req.body.cost,
+//         hotelPic:req.file.path,
+//         capacity:req.body.capacity,
+//         type_room:req.body.type_room,
+//         type_bed:req.body.type_bed,
+//         status:req.body.status
+//     }).lean().exec();
 
-      return res.status(200).send(users);
-    } catch (err) {
-      return res.status(500).send({ message: err.message });
-    }
-  });
+//       return res.status(200).send(users);
+//     } catch (err) {
+//       return res.status(500).send({ message: err.message });
+//     }
+//   });
 
 
 router.get("/:id", async(req,res)=>{
