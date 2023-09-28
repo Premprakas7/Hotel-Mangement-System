@@ -56,7 +56,7 @@ const AdminTable = () => {
                 <Td>{e.cost}</Td>
                 <Td>{e.capacity} Adults</Td>
                 <Td>{e.room}</Td>
-                <Td>{e.type_bed}</Td>
+                <Td>{e.bed}</Td>
                 <Td>{e.status}</Td>
                 <Td>
                   <Image boxSize="12rem" h="10rem" src={e.image} />

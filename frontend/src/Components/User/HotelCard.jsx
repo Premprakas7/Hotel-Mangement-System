@@ -18,7 +18,7 @@ const HotelCard = ({
   cost,
   capacity,
   room,
-  type_bed,
+  bed,
   status,
   id,
 }) => {

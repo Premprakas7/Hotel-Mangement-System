@@ -13,7 +13,7 @@
   })
 
   const fileFilter = (req, file, callback) => {
-    if (file.mimetype === "hotelPic/jpeg" || file.mimetype === "hotelPic/png" ) {
+    if (file.mimetype === "img/jpeg" || file.mimetype === "img/png" ) {
       callback(null, true);
     } else {
       callback(new Error("Incorrect mime type"), false);

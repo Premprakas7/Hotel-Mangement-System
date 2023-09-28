@@ -18,7 +18,7 @@ const AdminForm = () => {
     cost: "",
     capacity: "",
     room: "",
-    type_bed: "",
+    bed: "",
     status: "",
   });
   const handleChange = (e) => {
@@ -37,7 +37,7 @@ const AdminForm = () => {
         cost: values.cost,
         capacity: values.capacity,
         room: values.room,
-        type_bed: values.type_bed,
+        bed: values.bed,
         status: values.status,
       })
       .then((res) => console.log(res.data))
@@ -118,8 +118,8 @@ const AdminForm = () => {
           <FormLabel>Type of Bed</FormLabel>
           <Select
             placeholder="Select Option"
-            id="type_bed"
-            value={values.type_bed}
+            id="bed"
+            value={values.bed}
             onChange={(e) => handleChange(e)}
           >
             <option value="Single">Single</option>

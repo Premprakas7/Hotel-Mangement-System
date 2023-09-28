@@ -6,9 +6,9 @@ const userSchema=new mongoose.Schema({
     cost:{type:String, required:true},
     capacity:{type:String, required:true},
     room:{type:String, required:true},
-    type_bed:{type:String, required:true},
+    bed:{type:String, required:true},
     status:{type:String, required:true},
-    hotelPic:[{type:String, required:true}]
+    img:[{type:String, required:true}]
 },
 {
     versionKey: false,

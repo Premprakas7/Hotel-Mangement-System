@@ -7,7 +7,7 @@
       "cost": "8000",
       "capacity": "2",
       "room": "AC",
-      "type_bed": "Single",
+      "bed": "Single",
       "status": "Available",
       "id": 1
     },
@@ -18,7 +18,7 @@
       "cost": "12000",
       "capacity": "4",
       "room": "AC",
-      "type_bed": "Single",
+      "bed": "Single",
       "status": "Available",
       "id": 2
     },
@@ -29,7 +29,7 @@
       "cost": "15000",
       "capacity": "2",
       "room": "AC",
-      "type_bed": "Double",
+      "bed": "Double",
       "status": "Booked",
       "id": 3
     },
@@ -40,7 +40,7 @@
       "cost": "3000",
       "capacity": "2",
       "room": "Non AC",
-      "type_bed": "Single",
+      "bed": "Single",
       "status": "Booked",
       "id": 4
     }

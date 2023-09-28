@@ -114,7 +114,7 @@ const Details = () => {
                     <Text as={"span"} fontWeight={"bold"}>
                       Type of Bed:
                     </Text>{" "}
-                    {current.type_bed}
+                    {current.bed}
                   </ListItem>
                   <ListItem>
                     <Text as={"span"} fontWeight={"bold"}>

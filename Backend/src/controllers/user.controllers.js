@@ -12,7 +12,7 @@ router.get("", async(req,res)=>{
     }
 })
 
-router.post("", uploads.single("hotelPic"),async(req,res)=>{
+router.post("", uploads.single("img"),async(req,res)=>{
     try {
         const users=await User.create({
             name:req.body.name,
@@ -20,9 +20,9 @@ router.post("", uploads.single("hotelPic"),async(req,res)=>{
             cost:req.body.cost,
             capacity:req.body.capacity,
             room:req.body.room,
-            type_bed:req.body.type_bed,
+            bed:req.body.bed,
             status:req.body.status,
-            hotelPic:req.file.path
+            img:req.file.path
         }).lean().exec();
         return res.status(200).send(users);
     } catch (err) {
@@ -31,7 +31,7 @@ router.post("", uploads.single("hotelPic"),async(req,res)=>{
 })
 
 
-// router.post("/multiple", uploads.any("hotelPic"), async (req, res) => {
+// router.post("/multiple", uploads.any("img"), async (req, res) => {
 //     try {
 //       const filePaths = req.files.map((file) => {
 //         return file.path;
@@ -40,10 +40,10 @@ router.post("", uploads.single("hotelPic"),async(req,res)=>{
 //         name:req.body.name,
 //         category:req.body.category,
 //         cost:req.body.cost,
-//         hotelPic:req.file.path,
+//         img:req.file.path,
 //         capacity:req.body.capacity,
 //         room:req.body.room,
-//         type_bed:req.body.type_bed,
+//         bed:req.body.bed,
 //         status:req.body.status
 //     }).lean().exec();
 
