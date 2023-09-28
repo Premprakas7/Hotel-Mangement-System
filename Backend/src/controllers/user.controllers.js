@@ -19,7 +19,7 @@ router.post("", uploads.single("hotelPic"),async(req,res)=>{
             category:req.body.category,
             cost:req.body.cost,
             capacity:req.body.capacity,
-            type_room:req.body.type_room,
+            room:req.body.room,
             type_bed:req.body.type_bed,
             status:req.body.status,
             hotelPic:req.file.path
@@ -42,7 +42,7 @@ router.post("", uploads.single("hotelPic"),async(req,res)=>{
 //         cost:req.body.cost,
 //         hotelPic:req.file.path,
 //         capacity:req.body.capacity,
-//         type_room:req.body.type_room,
+//         room:req.body.room,
 //         type_bed:req.body.type_bed,
 //         status:req.body.status
 //     }).lean().exec();
