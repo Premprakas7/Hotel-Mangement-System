@@ -31,29 +31,6 @@ router.post("", uploads.single("img"),async(req,res)=>{
 })
 
 
-// router.post("/multiple", uploads.any("img"), async (req, res) => {
-//     try {
-//       const filePaths = req.files.map((file) => {
-//         return file.path;
-//       });
-//       const users=await User.create({
-//         name:req.body.name,
-//         category:req.body.category,
-//         cost:req.body.cost,
-//         img:req.file.path,
-//         capacity:req.body.capacity,
-//         room:req.body.room,
-//         bed:req.body.bed,
-//         status:req.body.status
-//     }).lean().exec();
-
-//       return res.status(200).send(users);
-//     } catch (err) {
-//       return res.status(500).send({ message: err.message });
-//     }
-//   });
-
-
 router.get("/:id", async(req,res)=>{
     try{
         const users=await User.findById(req.params.id).lean().exec();
