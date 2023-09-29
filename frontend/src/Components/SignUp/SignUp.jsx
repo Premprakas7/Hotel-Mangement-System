@@ -12,7 +12,7 @@ const [data,setData]=useState({
 })    
 
   const signUpHandler=()=>{
-    
+
 }
   return (
     <div>
@@ -35,7 +35,7 @@ const [data,setData]=useState({
             type="text"
             placeholder="Enter Name"
             id="name"
-            value={state.name} onChange={(e)=>setter({type:'name', payload:e.target.value})}
+           
                     />
 
           <FormLabel>Email</FormLabel>
@@ -43,7 +43,7 @@ const [data,setData]=useState({
             type="text"
             placeholder="email"
             id="email"
-            value={state.email} onChange={(e)=>setter({type:'email', payload:e.target.value})}
+            
           
         />
 
@@ -52,7 +52,7 @@ const [data,setData]=useState({
             type="text"
             placeholder="password"
             id="password"
-            value={state.password} onChange={(e)=>setter({type:'password', payload:e.target.value})}
+           
     />    
           <Button
             mt="15px"

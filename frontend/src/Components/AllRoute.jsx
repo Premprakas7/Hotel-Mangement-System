@@ -21,8 +21,6 @@ const AllRoute = () => {
             <Route path='/login' element={<Login/>}/>
             <Route path='/user/hotel/:id' element={<Details/>}/>
         </Routes>
-
-      
     </div>
   )
 }
