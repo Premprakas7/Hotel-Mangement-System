@@ -1,11 +1,12 @@
 const express=require("express");
-const authController=require("./controllers/auth.controllers")
+const userController=require("./controllers/user.controllers")
 const cors=require("cors")
-
+const mongoose=require("mongoose");
+mongoose.set('strictQuery', true);
 const app=express()
 app.use(express.json());
 app.use(cors())
 
-app.use("/auths", authController)
+app.use("/users", userController)
 
 module.exports=app;
