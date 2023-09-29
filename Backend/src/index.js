@@ -12,8 +12,8 @@ mongoose.set('strictQuery', true);
 app.use(express.json());
 app.use(cors())
 app.use("/users", userController);
-app.use("auth", authController);
-app.use("register",registerController);
-app.use("login", loginController);
+app.use("/auth", authController);
+app.use("/register",registerController);
+app.use("/login", loginController);
 
 module.exports=app;
