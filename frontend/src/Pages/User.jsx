@@ -1,12 +1,12 @@
-import React from 'react'
-import UserDisplay from '../Components/User/UserDisplay'
+import React from "react";
+import authDisplay from "../Components/auth/authDisplay";
 
-const User = () => {
+const auth = () => {
   return (
     <div>
-      <UserDisplay/>
+      <authDisplay />
     </div>
-  )
-}
+  );
+};
 
-export default User
+export default auth;

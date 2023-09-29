@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 
-const userSchema=new mongoose.Schema({
+const authSchema=new mongoose.Schema({
     name:{type:String, required:true},
     category:{type:String, required:true},
     cost:{type:String, required:true},
@@ -15,4 +15,4 @@ const userSchema=new mongoose.Schema({
     timestamps:true
 }
 )
-module.exports=mongoose.model("users",userSchema)
+module.exports=mongoose.model("auths",authSchema)

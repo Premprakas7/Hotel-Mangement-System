@@ -30,7 +30,7 @@ const AdminForm = () => {
   const AddProducts = (e) => {
     e.preventDefault();
     axios
-      .post("https://hotel-kp84.onrender.com/users", {
+      .post("https://hotel-kp84.onrender.com/auths", {
         name: values.name,
         category: values.category,
         image: values.image,

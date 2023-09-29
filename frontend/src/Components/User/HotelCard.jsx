@@ -86,7 +86,7 @@ const HotelCard = ({
                 {status}
               </Text>
             </Stack>
-            <RouteLink to={`/user/hotel/${id}`}>
+            <RouteLink to={`/auth/hotel/${id}`}>
               <Text>See more</Text>
             </RouteLink>
           </Stack>
