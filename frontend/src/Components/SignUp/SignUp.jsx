@@ -1,49 +1,19 @@
-import React, { useReducer } from 'react'
+import React, { useState } from 'react'
 import {FormControl,FormLabel,Input,Flex,Button,Heading,Stack, Text} from "@chakra-ui/react";
-import { Link as RouteLink , useNavigate } from 'react-router-dom'
+import { Link as RouteLink } from 'react-router-dom'
 import Header from '../User/Header';
 
 
-function reducer(state,action){
-  switch(action.type){
-    case "name":
-      return{
-        ...state,
-        name:action.payload
-      }
-      case "email":
-        return{
-          ...state,
-          email:action.payload
-        }
-        case "password":
-          return{
-            ...state,
-            password:action.payload
-          }
-      default: return state;
-  }
-}
-
-const initialState={
-  name:'',
-  email:'',
-  password:'',
-}
-
 const SignUp = () => {
-    const [state, setter]=useReducer(reducer, initialState);
-    const navigate=useNavigate();
-    const dispatch= useDispatch();
+const [data,setData]=useState({
+  name:"",
+  email:"",
+  password:""
+})    
 
-    const signUpHandler=()=>{
-dispatch(register(state)).then((res)=>{
-  if(res===REGISTER_SUCCESS){
-    navigate("/login",{replace:true})
-  }
-})
-    }
-
+  const signUpHandler=()=>{
+    
+}
   return (
     <div>
       <Header/>
