@@ -2,9 +2,7 @@ import React, { useReducer } from 'react'
 import {FormControl,FormLabel,Input,Flex,Button,Heading,Stack, Text} from "@chakra-ui/react";
 import { Link as RouteLink , useNavigate } from 'react-router-dom'
 import Header from '../User/Header';
-import { useDispatch } from 'react-redux';
-import { register } from '../../Redux/auth/action';
-import { REGISTER_SUCCESS } from '../../Redux/auth/actionTypes';
+
 
 function reducer(state,action){
   switch(action.type){

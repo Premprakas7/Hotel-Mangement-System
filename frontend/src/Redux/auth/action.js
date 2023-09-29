@@ -5,7 +5,7 @@ import * as Types from "./actionTypes";
 export const login = (params) => (dispatch) => {
   dispatch({ type: Types.LOGIN_REQUEST });
   return axios
-    .post("https://reqres.in//api/login", params)
+    .post("", params)
     .then((r) => {
       dispatch({ type: Types.LOGIN_SUCCESS, payload: r.data.token });
       return Types.LOGIN_SUCCESS;
@@ -15,3 +15,4 @@ export const login = (params) => (dispatch) => {
       return Types.LOGIN_FAILURE;
     });
 };
+
