@@ -9,7 +9,7 @@ router.post('' , async(req,res)=>{
         if(auth){
             res.send({message:"user Already Registerd"})
         }else{
-            const auth = new auth({
+            const auth = new Auth({
                 email,
                 password,
                 name

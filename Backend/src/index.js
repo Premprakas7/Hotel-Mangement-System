@@ -1,11 +1,11 @@
 const express=require("express");
 const mongoose=require("mongoose");
+const cors=require("cors")
+const app=express();
 const userController=require("./controllers/user.controllers")
 const authController=require("./controllers/auth.controllers")
 const registerController=require("./controllers/register.controller")
 const loginController=require("./controllers/login.controller")
-const cors=require("cors")
-const app=express();
 
 
 mongoose.set('strictQuery', true);
