@@ -1,43 +1,27 @@
 import React, { useState } from "react";
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Flex,
-  Button,
-  Heading,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import axios from "axios";
-import { Link as RouteLink } from "react-router-dom";
+import { FormControl,FormLabel,Input,Flex,Button,Heading,Stack,Text,} from "@chakra-ui/react";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
 import Header from "../User/Header";
+import { login } from "../../Redux/auth/action";
+import { LOGIN_SUCCESS } from "../../Redux/auth/actionTypes";
 
 const Login = () => {
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-  const handleChange = (e) => {
-    const newData = { ...values };
-    newData[e.target.id] = e.target.value;
-    setValues(newData);
-  };
+  const [name,setName]=useState();
+  const [email, setEmail]=useState();
+  const [password, setPassword]=useState();
+  const navigate=useNavigate();
 
-  const AddProducts = (e) => {
+  const handleSubmit=()=>{
     e.preventDefault();
-    axios
-      .post("", {
-        name: values.name,
-        email: values.email,
-        password: values.password,
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err.values));
-  };
+    if(email && name){
+      dispatch(login({email,name}))
+      .then((res)=>{
+        if(res.type === LOGIN_SUCCESS){
+          navigate("/", {replace:true})}
+        }
+      )
+    }
+  }
   return (
     <div>
       <Header />
@@ -52,14 +36,15 @@ const Login = () => {
           width="30%"
           boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
           p={"2rem"}
+          onSubmit={handleSubmit}
         >
           <FormLabel>Full Name</FormLabel>
           <Input
             type="text"
             placeholder="Enter Name"
             id="name"
-            value={values.name}
-            onChange={(e) => handleChange(e)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <FormLabel>Email</FormLabel>
@@ -67,8 +52,8 @@ const Login = () => {
             type="text"
             placeholder="email"
             id="email"
-            value={values.email}
-            onChange={(e) => handleChange(e)}
+            value={email}
+            onChange={(e) => setEmail(e.target.email)}
           />
 
           <FormLabel>Password</FormLabel>
@@ -76,15 +61,14 @@ const Login = () => {
             type="text"
             placeholder="password"
             id="password"
-            value={values.password}
-            onChange={(e) => handleChange(e)}
+            value={password}
+            onChange={(e) => setPassword(e.target.password)}
           />
           <Button
             mt="15px"
             width="full"
             type="submit"
             colorScheme="teal"
-            onClick={(e) => AddProducts(e)}
           >
             Login
           </Button>
