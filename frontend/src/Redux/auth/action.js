@@ -5,7 +5,7 @@ import * as Types from "./actionTypes";
 export const login = (params) => (dispatch) => {
   dispatch({ type: Types.LOGIN_REQUEST });
   return axios
-    .post("", params)
+    .post("https://hotel-backend-3tcb.onrender.com/login", params)
     .then((r) => {
       dispatch({ type: Types.LOGIN_SUCCESS, payload: r.data.token });
       return Types.LOGIN_SUCCESS;
