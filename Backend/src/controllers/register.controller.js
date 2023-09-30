@@ -4,14 +4,15 @@ const Auth = require('../models/auth.model')
 
 
 router.post('' , async(req,res)=>{
-    const {email,password} = req.body
+    const {email,password,name} = req.body
     Auth.findOne({email:email}, async(err,auth)=>{
         if(auth){
             res.send({message:"user Already Registerd"})
         }else{
             const auth = new auth({
                 email,
-                password
+                password,
+                name
             })
             auth.save(err=>{
                 if(err){

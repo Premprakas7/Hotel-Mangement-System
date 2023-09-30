@@ -5,7 +5,7 @@ const Auth = require('../models/auth.model')
 const secreteKey = 'secreteKey'
 
 router.post('',async(req,res)=>{
-    const {email,password} =req.body
+    const {email,password,name} =req.body
     Auth.findOne({email:email},async(err,auth)=>{
         if(auth){
             if(password == auth.password){
