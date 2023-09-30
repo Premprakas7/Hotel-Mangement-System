@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouteLink } from "react-router-dom";
 import Header from "../User/Header";
+import axios from "axios";
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -19,7 +20,22 @@ const SignUp = () => {
     password: "",
   });
 
-  const signUpHandler = () => {};
+  const handleChange=(e)=>{
+    const newData = {...data}
+    newData[e.target.id]=e.target.value;
+    setData(newData)
+  }
+
+  const signUpHandler = (e) => {
+    e.preventDefault();
+    axios.post("https://jwtback.onrender.com/register",{
+    name:setData.name,
+    email:setData.email,
+    password:setData.password
+  }).then((res)=>console.log(res.d))
+  };
+
+  
   return (
     <div>
       <Header />
@@ -36,13 +52,22 @@ const SignUp = () => {
           p={"2rem"}
         >
           <FormLabel>Full Name</FormLabel>
-          <Input type="text" placeholder="Enter Name" id="name" />
+          <Input type="text" placeholder="Enter Name" 
+          id="name" value={data.name}
+          onChange={(e)=>handleChange(e)}
+          />
 
           <FormLabel>Email</FormLabel>
-          <Input type="text" placeholder="email" id="email" />
+          <Input type="text" placeholder="email"
+           id="email"  value={data.email}
+           onChange={(e)=>handleChange(e)}
+           />
 
           <FormLabel>Password</FormLabel>
-          <Input type="text" placeholder="password" id="password" />
+          <Input type="text" placeholder="password" 
+          id="password" value={data.password}
+          onChange={(e)=>handleChange(e)}
+          />
           <Button
             mt="15px"
             width="full"
