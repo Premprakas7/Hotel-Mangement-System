@@ -14,7 +14,7 @@ router.post('',async(req,res)=>{
                 })
             }
             else{
-                res.send({message:"Name doesn't match"})
+                res.send({message:"email doesn't match"})
                }
         }
         else{
