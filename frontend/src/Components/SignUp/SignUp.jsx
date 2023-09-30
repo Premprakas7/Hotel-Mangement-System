@@ -81,7 +81,7 @@ const SignUp = () => {
           </Button>
           <Stack pt={6}>
             <Text align={"center"}>
-              Already a auth?{" "}
+              Already a User?{" "}
               <RouteLink to="/login" color={"blue.400"}>
                 <Button colorScheme="teal">Login</Button>
               </RouteLink>
