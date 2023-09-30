@@ -9,11 +9,12 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { Link as RouteLink } from "react-router-dom";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
 import Header from "../User/Header";
 import axios from "axios";
 
 const SignUp = () => {
+  const navigate=useNavigate();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -32,7 +33,8 @@ const SignUp = () => {
     name:setData.name,
     email:setData.email,
     password:setData.password
-  }).then((res)=>console.log(res.d))
+  }).then((res)=>console.log(res.d), navigate("/login")
+  )
   };
 
   
