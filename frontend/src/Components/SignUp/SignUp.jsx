@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Flex,
-  Button,
-  Heading,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import {FormControl,FormLabel,Input,Flex,Button, Heading, Stack,Text,} from "@chakra-ui/react";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import Header from "../User/Header";
 import axios from "axios";
