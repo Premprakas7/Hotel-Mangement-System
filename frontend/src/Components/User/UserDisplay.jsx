@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./Header";
 import Hotel from "./Hotel";
 
-const authDisplay = () => {
+const UserDisplay = () => {
   return (
     <div>
       <Header />
@@ -17,4 +17,4 @@ const authDisplay = () => {
   );
 };
 
-export default authDisplay;
+export default UserDisplay;

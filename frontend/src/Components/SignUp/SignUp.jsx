@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link as RouteLink } from "react-router-dom";
-import Header from "../auth/Header";
+import Header from "../User/Header";
 
 const SignUp = () => {
   const [data, setData] = useState({

@@ -1,12 +1,13 @@
 import React from "react";
-import authDisplay from "../Components/auth/authDisplay";
+import UserDisplay from "../Components/User/UserDisplay";
 
-const auth = () => {
+
+const User = () => {
   return (
     <div>
-      <authDisplay />
+      < UserDisplay/>
     </div>
   );
 };
 
-export default auth;
+export default User;

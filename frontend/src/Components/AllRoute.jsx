@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
-import auth from "../Pages/auth";
 import Admin from "../Pages/Admin";
 import AdminEdit from "./Admin/AdminEdit";
 import SignUp from "./SignUp/SignUp";
 import Login from "./Login/Login";
-import Details from "./auth/Details";
+import Details from "./User/Details";
 import ReqAuth from "./ReqAuth";
+import User from "../Pages/User";
 
 const AllRoute = () => {
   return (
@@ -15,10 +15,10 @@ const AllRoute = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/auth"
+          path="/user"
           element={
             <ReqAuth>
-              <auth />
+              <User />
             </ReqAuth>
           }
         />
@@ -33,7 +33,7 @@ const AllRoute = () => {
         <Route path="/admin/edit/:id" element={<AdminEdit />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/auth/hotel/:id" element={<Details />} />
+        <Route path="/user/hotel/:id" element={<Details />} />
       </Routes>
     </div>
   );

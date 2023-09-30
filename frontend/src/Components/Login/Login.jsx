@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { Link as RouteLink } from "react-router-dom";
-import Header from "../auth/Header";
+import Header from "../User/Header";
 
 const Login = () => {
   const [values, setValues] = useState({
