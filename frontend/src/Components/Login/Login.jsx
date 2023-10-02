@@ -69,12 +69,13 @@ const Login = () => {
             width="full"
             type="submit"
             colorScheme="teal"
+            onSubmit={handleSubmit}
           >
             Login
           </Button>
           <Stack pt={6}>
             <Text align={"center"}>
-              Not a auth?{" "}
+              Not a User ?{" "}
               <RouteLink to="/signup" color={"blue.400"}>
                 <Button colorScheme="teal">SignUp</Button>
               </RouteLink>
