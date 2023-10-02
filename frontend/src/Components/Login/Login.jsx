@@ -44,7 +44,7 @@ const Login = () => {
             placeholder="Enter Name"
             id="name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) =>setName(e.target.value)}
           />
 
           <FormLabel>Email</FormLabel>
@@ -53,7 +53,7 @@ const Login = () => {
             placeholder="email"
             id="email"
             value={email}
-            onChange={(e) => setEmail(e.target.email)}
+            onChange={(e) =>setEmail(e.target.value)}
           />
 
           <FormLabel>Password</FormLabel>
@@ -62,7 +62,7 @@ const Login = () => {
             placeholder="password"
             id="password"
             value={password}
-            onChange={(e) => setPassword(e.target.password)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <Button
             mt="15px"
@@ -77,7 +77,7 @@ const Login = () => {
             <Text align={"center"}>
               Not a User ?{" "}
               <RouteLink to="/signup" color={"blue.400"}>
-                <Button colorScheme="teal">SignUp</Button>
+                <Button colorScheme="teal">SIGNUP</Button>
               </RouteLink>
             </Text>
           </Stack>
