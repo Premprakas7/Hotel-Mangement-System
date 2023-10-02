@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword]=useState();
   const navigate=useNavigate();
 
-  const handleSubmit=()=>{
+  const handleSubmit=(e)=>{
     e.preventDefault();
     if(email && name){
       dispatch(login({email,name}))

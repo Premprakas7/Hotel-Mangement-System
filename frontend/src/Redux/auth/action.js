@@ -1,18 +1,14 @@
-import axios from "axios";
-import * as Types from "./actionTypes";
+import axios from "axios"
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionTypes"
 
-
-export const login = (params) => (dispatch) => {
-  dispatch({ type: Types.LOGIN_REQUEST });
-  return axios
-    .post("https://hotel-backend-3tcb.onrender.com/login", params)
-    .then((r) => {
-      dispatch({ type: Types.LOGIN_SUCCESS, payload: r.data.token });
-      return Types.LOGIN_SUCCESS;
+export const login=(payload)=>(dispatch)=>{
+    dispatch({type:LOGIN_REQUEST})
+   return axios({
+    method:"post",
+        url:"/login",
+        baseURL:"https://hotel-backend-3tcb.onrender.com/",
+        data:payload
     })
-    .catch((e) => {
-      dispatch({ type: Types.LOGIN_FAILURE, payload: e });
-      return Types.LOGIN_FAILURE;
-    });
-};
-
+    .then((res)=>{ return dispatch({type:LOGIN_SUCCESS, payload:res.data.token})})
+    .catch((err)=>{return dispatch({type:LOGIN_FAILURE })})
+    }
