@@ -6,9 +6,9 @@ import { login } from "../../Redux/auth/action";
 import { LOGIN_SUCCESS } from "../../Redux/auth/actionTypes";
 
 const Login = () => {
-  const [name,setName]=useState();
-  const [email, setEmail]=useState();
-  const [password, setPassword]=useState();
+  const [name,setName]=useState("");
+  const [email, setEmail]=useState("");
+  const [password, setPassword]=useState("");
   const navigate=useNavigate();
 
   const handleSubmit=(e)=>{
