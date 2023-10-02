@@ -13,9 +13,9 @@ const Home = () => {
               Admin
             </Button>
           </RouteLink>
-          <RouteLink to="/auth">
+          <RouteLink to="/user">
             <Button colorScheme="teal" size="lg">
-              auth
+              User
             </Button>
           </RouteLink>
         </ButtonGroup>
