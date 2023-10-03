@@ -17,7 +17,7 @@ import { deleteItem, getData } from "../../Redux/app/action";
 
 const AdminTable = () => {
   const dispatch = useDispatch();
-  const hotel = useSelector((state) => state.reducer.hotel);
+  const hotel = useSelector((state) => state.app.hotel);
   useEffect(() => {
     if (hotel.length === 0) {
       dispatch(getData());
@@ -36,7 +36,6 @@ const AdminTable = () => {
         <Table>
           <Thead>
             <Tr>
-              <Th>Number</Th>
               <Th>Category</Th>
               <Th>Cost</Th>
               <Th>Max Capacity</Th>
@@ -51,7 +50,6 @@ const AdminTable = () => {
           <Tbody>
             {hotel.map((e) => (
               <Tr key={e.id}>
-                <Td>{e.id}</Td>
                 <Td>{e.category}</Td>
                 <Td>{e.cost}</Td>
                 <Td>{e.capacity} Adults</Td>
@@ -59,7 +57,7 @@ const AdminTable = () => {
                 <Td>{e.bed}</Td>
                 <Td>{e.status}</Td>
                 <Td>
-                  <Image boxSize="12rem" h="10rem" src={e.image} />
+                  <Image boxSize="12rem" h="10rem" src={e.img} />
                 </Td>
                 <Td>
                   <Button onClick={() => handleDelete(e.id)}>Delete</Button>
