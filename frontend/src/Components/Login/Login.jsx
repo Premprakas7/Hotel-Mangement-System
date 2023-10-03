@@ -13,9 +13,10 @@ const Login = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    if(email && name){
-      dispatch(login({email,name}))
+    if(email && password){
+      dispatch(login({email,password}))
       .then((res)=>{
+        console.log(res)
         if(res.type === LOGIN_SUCCESS){
           navigate("/", {replace:true})}
         }
@@ -67,7 +68,6 @@ const Login = () => {
           <Button
             mt="15px"
             width="full"
-            type="submit"
             colorScheme="teal"
             onSubmit={handleSubmit}
           >
