@@ -20,8 +20,6 @@ router.post("",async(req,res)=>{
     }
 })
 
-
-
 router.get("/:id", async(req,res)=>{
     try{
         const users=await User.findById(req.params.id).lean().exec();
@@ -53,12 +51,12 @@ module.exports=router;
 
 
 // name:req.body.name,
-//             category:req.body.category,
-//             cost:req.body.cost,
-//             capacity:req.body.capacity,
-//             room:req.body.room,
-//             bed:req.body.bed,
-//             status:req.body.status,
-//             img:req.file.path
+// category:req.body.category,
+// cost:req.body.cost,
+// capacity:req.body.capacity,
+// room:req.body.room,
+// bed:req.body.bed,
+// status:req.body.status,
+// img:req.file.img
 
 //             const uploads = require("../middleware/uploads");

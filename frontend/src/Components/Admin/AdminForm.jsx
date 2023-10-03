@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Flex,
-  Button,
-  Heading,
-  Select,
-} from "@chakra-ui/react";
+import { FormControl,FormLabel, Input,Flex,Button,Heading,Select} from "@chakra-ui/react";
 import axios from "axios";
 
 const AdminForm = () => {
-  const [values, setValues] = useState({
+  const [data, setData] = useState({
     name: "",
     category: "",
     image: "",
@@ -22,22 +14,22 @@ const AdminForm = () => {
     status: "",
   });
   const handleChange = (e) => {
-    const newData = { ...values };
+    const newData = { ...data };
     newData[e.target.id] = e.target.value;
-    setValues(newData);
+    setData(newData);
   };
 
   const AddProducts = (e) => {
     e.preventDefault();
     axios.post("https://hotel-kp84.onrender.com/users", {
-        name: values.name,
-        category: values.category,
-        image: values.image,
-        cost: values.cost,
-        capacity: values.capacity,
-        room: values.room,
-        bed: values.bed,
-        status: values.status,
+        name: data.name,
+        category: data.category,
+        img:data.img,
+        cost: data.cost,
+        capacity: data.capacity,
+        room: data.room,
+        bed: data.bed,
+        status: data.status,
       })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err.values));
@@ -62,14 +54,14 @@ const AdminForm = () => {
             type="text"
             placeholder="name"
             id="name"
-            value={values.name}
+            value={data.name}
             onChange={(e) => handleChange(e)}
           />
           <FormLabel>Room Category</FormLabel>
           <Select
             placeholder="Select Option"
             id="category"
-            value={values.category}
+            value={data.category}
             onChange={(e) => handleChange(e)}
           >
             <option value="Family">Family</option>
@@ -79,10 +71,10 @@ const AdminForm = () => {
 
           <FormLabel>Room Images</FormLabel>
           <Input
-            type="url"
+            type="text"
             placeholder="Image Link"
-            id="image"
-            value={values.image}
+            id="img"
+            value={data.img}
             onChange={(e) => handleChange(e)}
           />
 
@@ -91,7 +83,7 @@ const AdminForm = () => {
             type="text"
             placeholder="Cost"
             id="cost"
-            value={values.cost}
+            value={data.cost}
             onChange={(e) => handleChange(e)}
           />
 
@@ -100,14 +92,14 @@ const AdminForm = () => {
             type="text"
             placeholder="Maximum Capacity"
             id="capacity"
-            value={values.capacity}
+            value={data.capacity}
             onChange={(e) => handleChange(e)}
           />
           <FormLabel>Type of Room</FormLabel>
           <Select
             placeholder="Select Option"
             id="room"
-            value={values.room}
+            value={data.room}
             onChange={(e) => handleChange(e)}
           >
             <option value="AC">AC</option>
@@ -118,7 +110,7 @@ const AdminForm = () => {
           <Select
             placeholder="Select Option"
             id="bed"
-            value={values.bed}
+            value={data.bed}
             onChange={(e) => handleChange(e)}
           >
             <option value="Single">Single</option>
@@ -129,7 +121,7 @@ const AdminForm = () => {
           <Select
             placeholder="Select Option"
             id="status"
-            value={values.status}
+            value={data.status}
             onChange={(e) => handleChange(e)}
           >
             <option value="Booked">Booked</option>
