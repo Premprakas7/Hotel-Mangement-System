@@ -14,7 +14,7 @@ const HotelCard = ({
   item,
   category,
   name,
-  image,
+  img,
   cost,
   capacity,
   room,
@@ -49,7 +49,7 @@ const HotelCard = ({
               pos: "absolute",
               top: 5,
               left: 0,
-              backgroundImage: `url(${image})`,
+              backgroundImage: `url(${img})`,
               filter: "blur(15px)",
               zIndex: -1,
             }}
@@ -64,7 +64,7 @@ const HotelCard = ({
               height={230}
               width={282}
               objectFit={"cover"}
-              src={image}
+              src={img}
             />
           </Box>
           <Stack pt={10} align={"center"}>
@@ -86,7 +86,7 @@ const HotelCard = ({
                 {status}
               </Text>
             </Stack>
-            <RouteLink to={`/auth/hotel/${id}`}>
+            <RouteLink to={`/user/hotel/${id}`}>
               <Text>See more</Text>
             </RouteLink>
           </Stack>
