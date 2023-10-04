@@ -21,7 +21,7 @@ const AdminForm = () => {
 
   const AddProducts = (e) => {
     e.preventDefault();
-    axios.post("https://hotel-kp84.onrender.com/users", {
+    axios.post("https://hotel-backend-3tcb.onrender.com/users", {
         name: data.name,
         category: data.category,
         img:data.img,
