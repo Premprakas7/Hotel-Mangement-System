@@ -6,7 +6,7 @@ export const login=(payload)=>(dispatch)=>{
    return axios({
     method:"post",
         url:"/login",
-        baseURL:"https://hotel-backend-3tcb.onrender.com/",
+        baseURL:"https://hotel-backend-3tcb.onrender.com",
         data:payload
     })
     .then((res)=>{ return dispatch({type:LOGIN_SUCCESS, payload:res.data.token})})
