@@ -19,11 +19,11 @@ const Details = () => {
 
   useEffect(() => {
     if (id) {
-      const current = detail.find((hotel) => hotel.id === Number(id));
+      const current = detail.find((hotel) => hotel._id ===(id));
       current && setCurrent(current);
     }
   }, [id, detail]);
-  console.log(current);
+  
 
   return (
     <div>
