@@ -1,6 +1,6 @@
 const express=require("express");
 const User=require("../models/user.models");
-const router=express.Router()
+const router=express.Router();
 
 router.get("", async(req,res)=>{
     try {
