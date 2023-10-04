@@ -10,7 +10,7 @@ const Hotel = () => {
     useEffect(()=>{
           dispatch(getData())
     },[dispatch])
-  console.log(hotel)
+  
     const handleSort=(e)=>{
       let value=e.target.value;
       let sortBy=[...hotel];

@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Center,
-  useColorModeValue,
-  Heading,
-  Text,
-  Stack,
-  Image,
-} from "@chakra-ui/react";
+import {Box,Center,useColorModeValue,Heading, Text,Stack,Image} from "@chakra-ui/react";
 import { Link as RouteLink } from "react-router-dom";
 
 const HotelCard = ({
