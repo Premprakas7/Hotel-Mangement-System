@@ -1,20 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Box,
-  Container,
-  Stack,
-  Text,
-  Image,
-  Flex,
-  Button,
-  Heading,
-  SimpleGrid,
-  StackDivider,
-  useColorModeValue,
-  List,
-  ListItem,
-} from "@chakra-ui/react";
+import {Box,Container,Stack,Text,Image,Flex,Button,Heading,SimpleGrid,StackDivider,useColorModeValue,List,ListItem,} from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { getData } from "../../Redux/app/action";
 import Header from "./Header";
@@ -23,7 +9,7 @@ const Details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [current, setCurrent] = useState({});
-  const detail = useSelector((state) => state.reducer.hotel);
+  const detail = useSelector((state) => state.app.hotel);
 
   useEffect(() => {
     if (detail.length === 0) {
@@ -52,7 +38,7 @@ const Details = () => {
             <Image
               rounded={"md"}
               alt={"product image"}
-              src={current.image}
+              src={current.img}
               fit={"cover"}
               align={"center"}
               w={"100%"}

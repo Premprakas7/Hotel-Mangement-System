@@ -52,7 +52,7 @@ const AdminForm = () => {
           <FormLabel>Hotel Name</FormLabel>
           <Input
             type="text"
-            placeholder="name"
+            placeholder="Name"
             id="name"
             value={data.name}
             onChange={(e) => handleChange(e)}

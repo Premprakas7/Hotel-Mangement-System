@@ -7,7 +7,7 @@ import { Link as RouteLink } from 'react-router-dom'
 
 const AdminEdit = () => {
   const {id}=useParams()
-  const data=useSelector(state=>state.reducer.data)
+  const data=useSelector(state=>state.app.data)
   const dispatch=useDispatch();
   const [category, setCategory]=useState()
   const [image, setImage]=useState()

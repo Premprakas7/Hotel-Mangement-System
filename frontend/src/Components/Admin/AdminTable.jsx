@@ -1,15 +1,4 @@
-import {
-  Heading,
-  Image,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-  Button,
-} from "@chakra-ui/react";
+import { Heading,Image,Table, TableContainer, Tbody,Td, Th,Thead,Tr, Button} from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as RouteLink } from "react-router-dom";
@@ -18,17 +7,18 @@ import { deleteItem, getData } from "../../Redux/app/action";
 const AdminTable = () => {
   const dispatch = useDispatch();
   const hotel = useSelector((state) => state.app.hotel);
-  useEffect(() => {
-    if (hotel.length === 0) {
+
+  useEffect(()=>{
+    if (hotel.length === 0){
       dispatch(getData());
     }
   }, [dispatch, hotel.length]);
 
-  const handleDelete = (id) => {
-    let newData = hotel.filter((item) => item.id !== id);
-    dispatch(deleteItem(id, newData)).then(() => dispatch(getData()));
+  const handleDelete = (_id) => {
+    let newData = hotel.filter((item) => item._id !== _id);
+    dispatch(deleteItem(_id, newData)).then(() => dispatch(getData()));
   };
-  console.log(hotel);
+  
   return (
     <div>
       <Heading>Admin Table</Heading>
@@ -49,7 +39,7 @@ const AdminTable = () => {
           </Thead>
           <Tbody>
             {hotel.map((e) => (
-              <Tr key={e.id}>
+              <Tr key={e._id}>
                 <Td>{e.category}</Td>
                 <Td>{e.cost}</Td>
                 <Td>{e.capacity} Adults</Td>
@@ -60,10 +50,10 @@ const AdminTable = () => {
                   <Image boxSize="12rem" h="10rem" src={e.img} />
                 </Td>
                 <Td>
-                  <Button onClick={() => handleDelete(e.id)}>Delete</Button>
+                  <Button onClick={() => handleDelete(e._id)}>Delete</Button>
                 </Td>
                 <Td>
-                  <RouteLink to={`/admin/edit/${e.id}`}>
+                  <RouteLink to={`/admin/edit/${e._id}`}>
                     <Button>Update</Button>
                   </RouteLink>
                 </Td>

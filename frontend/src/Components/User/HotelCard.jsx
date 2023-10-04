@@ -20,7 +20,7 @@ const HotelCard = ({
   room,
   bed,
   status,
-  id,
+  _id,
 }) => {
   return (
     <div>
@@ -35,6 +35,7 @@ const HotelCard = ({
           rounded={"lg"}
           pos={"relative"}
           zIndex={1}
+          key={_id}
         >
           <Box
             rounded={"lg"}
@@ -52,6 +53,7 @@ const HotelCard = ({
               backgroundImage: `url(${img})`,
               filter: "blur(15px)",
               zIndex: -1,
+              
             }}
             _groupHover={{
               _after: {
@@ -86,7 +88,7 @@ const HotelCard = ({
                 {status}
               </Text>
             </Stack>
-            <RouteLink to={`/user/hotel/${id}`}>
+            <RouteLink to={`/user/hotel/${_id}`}>
               <Text>See more</Text>
             </RouteLink>
           </Stack>
