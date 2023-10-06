@@ -6,7 +6,7 @@
 ### Backend Deployed link- https://hotel-backend-3tcb.onrender.com/
 # End Points-
 
-Indeed is the #1 job site in the world1 with over 250M unique visitors every month. Indeed strives to put job seekers first, giving them free access to search for jobs, post resumes, and research companies.
+
 
 In this project I have tried to manipulate React, styling using css, chakra and tried to make website more dynamic. With our efforts and the technology stack.
 
