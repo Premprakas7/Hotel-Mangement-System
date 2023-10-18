@@ -24,7 +24,7 @@ export const deleteItem = (id, payload) => (dispatch) => {
   export const EditData = (id, payload) => (dispatch) => {
     dispatch({ type: EDIT_REQUEST });
     return axios.patch(`https://hotel-backend-3tcb.onrender.com/users/${id}`, payload)
-      .then((r) => { dispatch({ type:EDIT_SUCCESS, payload: r.data });})
+      .then((r) => { dispatch({ type:EDIT_SUCCESS, payload: r});})
       .catch((e) => dispatch({ type: EDIT_FAILURE, payload: e }));
   };
 
