@@ -8,7 +8,7 @@ const UserDisplay = () => {
     <div>
       <Header />
       <Flex>
-        <Box w="18%">Filter</Box>
+        <Box w="18%">Filter Items</Box>
         <Flex w="81%">
           <Hotel />
         </Flex>
