@@ -8,7 +8,7 @@ const Header = () => {
       <Flex bg="teal" h="4rem" alignItems="center" maxW={"full"}>
         <RouteLink to="/user">
           <Heading fontStyle="italic" color="white">
-            Maleen Hotel
+            Prem Hotels
           </Heading>
         </RouteLink>
         <Spacer />
