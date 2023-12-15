@@ -35,8 +35,6 @@ const Hotel = () => {
       </Select>
       <Input placeholder='Filter by Hotel Name' onInput={filterName}/>
       </Flex>
-
-
       
       <Grid templateColumns={{base:"repeat(1,fr)", sm:"repeat(2,1fr)", lg:"repeat(3,1fr)"}} gap="2rem">
       {hotel.map((item)=><HotelCard key={item._id} {...item}/>)}
