@@ -26,10 +26,11 @@ const AdminTable = () => {
         <Table>
           <Thead>
             <Tr>
+            <Th>Category</Th>
               <Th>Category</Th>
               <Th>Cost</Th>
               <Th>Max Capacity</Th>
-              <Th>Type Of Room</Th>
+              {/* <Th>Type Of Room</Th> */}
               <Th>Type Of Bed</Th>
               <Th>Status</Th>
               <Th>Images</Th>
@@ -40,10 +41,11 @@ const AdminTable = () => {
           <Tbody>
             {hotel.map((e) => (
               <Tr key={e._id}>
+                <Td>{e.name}</Td>
                 <Td>{e.category}</Td>
                 <Td>{e.cost}</Td>
                 <Td>{e.capacity} Adults</Td>
-                <Td>{e.room}</Td>
+                {/* <Td>{e.room}</Td> */}
                 <Td>{e.bed}</Td>
                 <Td>{e.status}</Td>
                 <Td>
