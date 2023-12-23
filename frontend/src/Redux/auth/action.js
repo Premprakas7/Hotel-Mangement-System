@@ -5,7 +5,7 @@ export const login=(payload)=>(dispatch)=>{
     dispatch({type:LOGIN_REQUEST})
    return axios({
     method:"post",
-        url:"/login",
+        url:"",
         baseURL:"",
         data:payload
     })
