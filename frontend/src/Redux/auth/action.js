@@ -5,8 +5,8 @@ export const login=(payload)=>(dispatch)=>{
     dispatch({type:LOGIN_REQUEST})
    return axios({
     method:"post",
-        url:"",
-        baseURL:"",
+        url:"/login",
+        baseURL:"https://hotel-backend-3tcb.onrender.com",
         data:payload
     })
     .then((res)=>{ return dispatch({type:LOGIN_SUCCESS, payload:res.data.token})})

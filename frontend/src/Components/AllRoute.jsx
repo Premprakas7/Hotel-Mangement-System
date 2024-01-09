@@ -17,17 +17,17 @@ const AllRoute = () => {
         <Route
           path="/user"
           element={
-            // <ReqAuth>
+             <ReqAuth>
               <User />
-            // </ReqAuth> 
+             </ReqAuth> 
           }
         />
         <Route
           path="/admin"
           element={
-            // <ReqAuth>
+             <ReqAuth>
               <Admin />
-          //  </ReqAuth>
+            </ReqAuth>
           }
         />
         <Route path="/admin/edit/:id" element={<AdminEdit />} />
