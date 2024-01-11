@@ -51,13 +51,13 @@ const SignUp = () => {
           />
 
           <FormLabel>Email</FormLabel>
-          <Input type="text" placeholder="email"
+          <Input type="text" placeholder="Email"
            id="email"  value={data.email}
            onChange={(e)=>handleChange(e)}
            />
 
           <FormLabel>Password</FormLabel>
-          <Input type="text" placeholder="password" 
+          <Input type="text" placeholder="Password" 
           id="password" value={data.password}
           onChange={(e)=>handleChange(e)}
           />
