@@ -7,7 +7,6 @@ import axios from "axios";
 const SignUp = () => {
   const navigate=useNavigate();
   const [data, setData] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -21,7 +20,6 @@ const SignUp = () => {
   const signUpHandler = (e) => {
     e.preventDefault();
     axios.post("https://hotel-backend-3tcb.onrender.com/register",{
-    name:setData.name,
     email:setData.email,
     password:setData.password
   }).then((res)=>console.log(res.d), navigate("/login")
@@ -44,11 +42,7 @@ const SignUp = () => {
           boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
           p={"2rem"}
         >
-          <FormLabel>Full Name</FormLabel>
-          <Input type="text" placeholder="Enter Name" 
-          id="name" value={data.name}
-          onChange={(e)=>handleChange(e)}
-          />
+          
 
           <FormLabel>Email</FormLabel>
           <Input type="text" placeholder="Email"

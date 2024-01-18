@@ -6,7 +6,6 @@ import { login } from "../../Redux/auth/action";
 import { LOGIN_SUCCESS } from "../../Redux/auth/actionTypes";
 
 const Login = () => {
-  const [name,setName]=useState("");
   const [email, setEmail]=useState("");
   const [password, setPassword]=useState("");
   const navigate=useNavigate();
@@ -40,15 +39,7 @@ const Login = () => {
           p={"2rem"}
           onSubmit={handleSubmit}
         >
-          <FormLabel>Full Name</FormLabel>
-          <Input
-            type="text"
-            placeholder="Enter Name"
-            id="name"
-            value={name}
-            onChange={(e) =>setName(e.target.value)}
-          />
-
+          
           <FormLabel>Email</FormLabel>
           <Input
             type="text"
