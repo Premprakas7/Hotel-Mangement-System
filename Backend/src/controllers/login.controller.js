@@ -5,8 +5,8 @@ const Auth = require('../models/auth.model')
 const secreteKey = 'secreteKey'
 
 router.post('',async(req,res)=>{
-    const {email,password,name} =req.body
-    Auth.findOne({email:email},{name:name},async(err,auth)=>{
+    const {email,password} =req.body
+    Auth.findOne({email:email},async(err,auth)=>{
         if(auth){
             if(password == auth.password){
                 jwt.sign({auth},secreteKey,{expiresIn:'500s'},(err,token)=>{

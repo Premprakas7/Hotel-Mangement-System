@@ -16,7 +16,7 @@ const Login = () => {
     if(email && password){
       dispatch(login({email,password}))
       .then((res)=>{
-        console.log(res)
+        console.log(res.type)
         if(res.type === LOGIN_SUCCESS){
           navigate("/", {replace:true})}
         }
