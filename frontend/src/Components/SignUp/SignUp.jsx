@@ -20,7 +20,7 @@ const SignUp = () => {
 
   const signUpHandler = (e) => {
     e.preventDefault();
-    axios.post("",{
+    axios.post("https://hotel-backend-3tcb.onrender.com/register",{
     name:setData.name,
     email:setData.email,
     password:setData.password
