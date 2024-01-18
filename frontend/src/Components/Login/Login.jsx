@@ -4,8 +4,10 @@ import { Link as RouteLink, useNavigate } from "react-router-dom";
 import Header from "../User/Header";
 import { login } from "../../Redux/auth/action";
 import { LOGIN_SUCCESS } from "../../Redux/auth/actionTypes";
+import {useDispatch} from "react-redux"
 
 const Login = () => {
+  const dispatch=useDispatch();
   const [email, setEmail]=useState("");
   const [password, setPassword]=useState("");
   const navigate=useNavigate();
@@ -37,7 +39,6 @@ const Login = () => {
           width="30%"
           boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
           p={"2rem"}
-          onSubmit={handleSubmit}
         >
           
           <FormLabel>Email</FormLabel>
@@ -61,7 +62,7 @@ const Login = () => {
             mt="15px"
             width="full"
             colorScheme="teal"
-            onSubmit={handleSubmit}
+            onClick={handleSubmit}
           >
             Login
           </Button>
