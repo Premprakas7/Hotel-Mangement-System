@@ -132,7 +132,7 @@ const Details = () => {
                 boxShadow: "lg",
               }}
             >
-              Add to cart
+              Book Hotels
             </Button>
           </Stack>
         </SimpleGrid>
