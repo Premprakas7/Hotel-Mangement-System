@@ -23,6 +23,10 @@ const Details = () => {
       current && setCurrent(current);
     }
   }, [id, detail]);
+
+  const BookHotel=()=>{
+    
+  }
   
 
   return (
@@ -130,7 +134,9 @@ const Details = () => {
               _hover={{
                 transform: "translateY(2px)",
                 boxShadow: "lg",
+              
               }}
+              onClick={BookHotel}
             >
               Book Hotels
             </Button>

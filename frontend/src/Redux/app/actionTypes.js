@@ -11,4 +11,8 @@ export const EDIT_REQUEST = "EDIT_REQUEST";
 export const EDIT_SUCCESS = "EDIT_SUCCESS";
 export const EDIT_FAILURE = "EDIT_FAILURE";
 
+export const ADD_CART_REQUEST= "ADD_CART_REQUEST"
+export const ADD_CART_SUCCESS= "ADD_CART_SUCCESS"
+export const ADD_CART_FAILURE= "ADD_CART_FAILURE"
+
 export const SORT_DATA = "SORT_DATA";

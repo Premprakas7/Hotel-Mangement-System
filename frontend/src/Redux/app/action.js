@@ -1,6 +1,6 @@
 import axios from "axios"
 import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS, DELETE_REQUEST,DELETE_SUCCESS,DELETE_FAILURE,
-   EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE ,SORT_DATA} from "./actionTypes"
+   EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE ,SORT_DATA, ADD_CART_REQUEST, ADD_CART_SUCCESS, ADD_CART_FAILURE} from "./actionTypes"
 
 
 
@@ -27,6 +27,13 @@ export const deleteItem = (id, payload) => (dispatch) => {
       .then((r) => { dispatch({ type:EDIT_SUCCESS, payload: r});})
       .catch((e) => dispatch({ type: EDIT_FAILURE, payload: e }));
   };
+
+  export const Book=(params)=>(dispatch)=>{
+    dispatch({type:ADD_CART_REQUEST})
+    axios.post("https://hotel-backend-3tcb.onrender.com/users", params)
+    .then((res)=>dispatch({type:ADD_CART_SUCCESS, payload:res.data}))
+    .catch((err)=>dispatch({type:ADD_CART_FAILURE}))
+    }
 
   export const sortData = (hotel) => {
     return {
