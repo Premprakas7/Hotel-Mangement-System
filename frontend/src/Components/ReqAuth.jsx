@@ -8,6 +8,9 @@ const ReqAuth = ({children}) => {
     if(!auth){
         return <Navigate to='/login' state={{from:location }} replace />
     }
+    else{
+      <button>Logout</button>
+    }
   return children
 };
 
