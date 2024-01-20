@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {Box,Container,Stack,Text,Image,Flex,Button,Heading,SimpleGrid,StackDivider,useColorModeValue,List,ListItem,} from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { getData } from "../../Redux/app/action";
+import { Book, getData } from "../../Redux/app/action";
 import Header from "./Header";
 
 const Details = () => {
@@ -24,8 +24,8 @@ const Details = () => {
     }
   }, [id, detail]);
 
-  const BookHotel=()=>{
-    
+  const BookHotel=(id)=>{
+    dispatch(Book(id))
   }
   
 
