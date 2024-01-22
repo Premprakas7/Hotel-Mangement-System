@@ -30,7 +30,7 @@ export const deleteItem = (id, payload) => (dispatch) => {
 
   export const Book=(params)=>(dispatch)=>{
     dispatch({type:ADD_CART_REQUEST})
-    axios.post("https://hotel-backend-3tcb.onrender.com/users", params)
+    axios.post("https://hotel-backend-3tcb.onrender.com/carts", params)
     .then((res)=>dispatch({type:ADD_CART_SUCCESS, payload:res.data}))
     .catch((err)=>dispatch({type:ADD_CART_FAILURE}))
     }
