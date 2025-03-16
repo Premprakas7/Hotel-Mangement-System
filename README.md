@@ -16,6 +16,7 @@ In this project I have tried to manipulate React, styling using css, chakra and 
 * JavaScript
 * React
 * Redux
+* Redux-thunk
 * Chakra
   
 # Backend stack Used 🌟
